@@ -20,7 +20,7 @@ import static org.junit.Assert.*;
 public class DateConverterTest {
 
   private static Object[] getParams(){
-    Object[] objects = new Object[5];
+    Object[] objects = new Object[6];
 
     Calendar calendar = Calendar.getInstance();
     calendar.set(1998, Calendar.APRIL, 14);
@@ -37,6 +37,9 @@ public class DateConverterTest {
 
     calendar.set(2005, Calendar.MAY, 31);
     objects[4] = new Object[] {calendar.getTime(), new DateBS(2062, CalendarBS.JESTHA, 17)};
+
+    calendar.set(2016, Calendar.APRIL, 9);
+    objects[5] = new Object[] {calendar.getTime(), new DateBS(2072, CalendarBS.CHAITRA, 27)};
 
 
     return objects;
