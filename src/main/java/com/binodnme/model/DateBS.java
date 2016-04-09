@@ -36,4 +36,13 @@ public class DateBS {
     return this.year == date.year && this.month == date.month && this.day == date.day;
 
   }
+
+  @Override
+  public String toString() {
+    return "DateBS{" +
+            "year=" + year +
+            ", month=" + month +
+            ", day=" + day +
+            '}';
+  }
 }

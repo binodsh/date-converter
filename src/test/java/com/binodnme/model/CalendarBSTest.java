@@ -1,4 +1,4 @@
-package model;
+package com.binodnme.model;
 
 import com.binodnme.model.CalendarBS;
 import com.binodnme.model.DateBS;

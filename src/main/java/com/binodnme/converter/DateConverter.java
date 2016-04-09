@@ -1,5 +1,6 @@
 package com.binodnme.converter;
 
+import com.binodnme.model.CalendarBS;
 import com.binodnme.model.DateBS;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
@@ -20,13 +21,17 @@ public class DateConverter {
   }
 
   private static DateBS getReferenceBS() {
-    return new DateBS(2055, 1, 1);
+    return new DateBS(2055, 0, 1);
   }
 
-//  public static DateBS convertADToBS(Date date) {
-//    DateTime startDate = new DateTime(getReferenceAD());
-//    DateTime endDate = new DateTime(date);
-//    int daysBetween = Days.daysBetween(startDate, endDate).getDays();
-//  }
+  public static DateBS convertADToBS(Date date) {
+    DateTime startDate = new DateTime(getReferenceAD());
+    DateTime endDate = new DateTime(date);
+    int daysBetween = Days.daysBetween(startDate, endDate).getDays();
+
+    if (daysBetween < 0) return null;
+
+    return CalendarBS.addXDays(getReferenceBS(), daysBetween);
+  }
 
 }
