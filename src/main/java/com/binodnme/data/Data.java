@@ -1,6 +1,5 @@
-package main.java.com.binodnme.data;
+package com.binodnme.data;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
