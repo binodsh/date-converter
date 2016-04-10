@@ -1,7 +1,7 @@
-package com.binodnme.converter;
+package com.binodnme.dateconverter.converter;
 
-import com.binodnme.model.CalendarBS;
-import com.binodnme.model.DateBS;
+import com.binodnme.dateconverter.utils.CalendarBS;
+import com.binodnme.dateconverter.utils.DateBS;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
@@ -32,6 +32,20 @@ public class DateConverter {
     if (daysBetween < 0) return null;
 
     return CalendarBS.addXDays(getReferenceBS(), daysBetween);
+  }
+
+
+  public static Date convertBSToAD(DateBS date) {
+    DateBS startDate = getReferenceBS();
+
+    int days = CalendarBS.daysBetween(startDate, date);
+
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(getReferenceAD());
+    calendar.set(Calendar.MILLISECOND, 0);
+    calendar.add(Calendar.DATE, days);
+
+    return calendar.getTime();
   }
 
 }

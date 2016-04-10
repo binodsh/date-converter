@@ -1,8 +1,7 @@
-package com.binodnme.model;
+package com.binodnme.dateconverter.utils;
 
-import com.binodnme.data.Data;
+import com.binodnme.dateconverter.data.Data;
 
-import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -44,13 +43,13 @@ public class CalendarBS {
   }
 
   public static DateBS addXDays(DateBS dateBS, int days) {
-    if(dateBS == null || days < 0) return null;
+    if (dateBS == null || days < 0)
+      return null;
 
     int delta = days;
     int currentYear = dateBS.getYear();
     int currentMonth = dateBS.getMonth();
     int currentDay = dateBS.getDay();
-
 
     do {
       int totalDaysInCurrentMonth = Data.data.get(currentYear).get(currentMonth);
@@ -71,9 +70,30 @@ public class CalendarBS {
         }
 
       }
-    }while (delta > 0);
+    } while (delta > 0);
 
     return new DateBS(currentYear, currentMonth, currentDay);
   }
 
+  public static int daysBetween(DateBS startDate, DateBS endDate) {
+    int totalDays = 0;
+
+    int year = startDate.getYear();
+    int month = startDate.getMonth();
+
+    while (!((year == endDate.getYear()) && (month == endDate.getMonth()))) {
+      if (month == CHAITRA) {
+        totalDays += Data.data.get(year).get(month);
+        year++;
+        month = BAISAKH;
+      } else {
+        totalDays += Data.data.get(year).get(month);
+        month++;
+      }
+    }
+
+    totalDays += (endDate.getDay() - startDate.getDay());
+
+    return totalDays;
+  }
 }

@@ -1,7 +1,7 @@
-package com.binodnme.converter;
+package com.binodnme.dateconverter.converter;
 
-import com.binodnme.model.CalendarBS;
-import com.binodnme.model.DateBS;
+import com.binodnme.dateconverter.utils.CalendarBS;
+import com.binodnme.dateconverter.utils.DateBS;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
@@ -23,6 +23,11 @@ public class DateConverterTest {
     Object[] objects = new Object[6];
 
     Calendar calendar = Calendar.getInstance();
+    calendar.set(Calendar.HOUR_OF_DAY, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+
     calendar.set(1998, Calendar.APRIL, 14);
     objects[0] = new Object[] {calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 1)};
 
@@ -47,9 +52,16 @@ public class DateConverterTest {
 
   @Test
   @Parameters(method = "getParams")
-  public void convertADToBS(Date dateAD, DateBS dateBS){
+  public void convertADToBSTest(Date dateAD, DateBS dateBS){
 
     DateBS dateBS1 = DateConverter.convertADToBS(dateAD);
     assertEquals(dateBS, dateBS1);
+  }
+
+  @Test
+  @Parameters(method = "getParams")
+  public void convertBSToADTest(Date expectedDate, DateBS inputDateBS){
+    Date actualDate = DateConverter.convertBSToAD(inputDateBS);
+    assertEquals(expectedDate, actualDate);
   }
 }

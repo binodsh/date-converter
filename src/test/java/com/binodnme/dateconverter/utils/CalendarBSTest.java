@@ -1,7 +1,5 @@
-package com.binodnme.model;
+package com.binodnme.dateconverter.utils;
 
-import com.binodnme.model.CalendarBS;
-import com.binodnme.model.DateBS;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
@@ -33,7 +31,8 @@ public class CalendarBSTest {
   }
 
   public static final Object[] getParameters() {
-    return new Object[] { new Object[] { new DateBS(2055, 0, 1), 10, new DateBS(2055, 0, 11) },
+    return new Object[] { new Object[] {
+            new DateBS(2055, 0, 1), 10, new DateBS(2055, 0, 11) },
             new Object[] { new DateBS(2055, 0, 1), 20, new DateBS(2055, 0, 21) },
             new Object[] { new DateBS(2055, 0, 1), 30, new DateBS(2055, 0, 31) },
             new Object[] { new DateBS(2055, 0, 1), 40, new DateBS(2055, 1, 10) },
@@ -47,5 +46,12 @@ public class CalendarBSTest {
   public void addXDaysTest(DateBS startDate, int daysToAdd, DateBS expectedDate) {
     DateBS dateBS = CalendarBS.addXDays(startDate, daysToAdd);
     assertEquals(expectedDate, dateBS);
+  }
+
+  @Test
+  @Parameters( method = "getParameters")
+  public void daysBetweenTest(DateBS startDate , int expectedDays, DateBS endDate){
+    int days = CalendarBS.daysBetween(startDate, endDate);
+    assertEquals(expectedDays, days);
   }
 }

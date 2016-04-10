@@ -1,4 +1,4 @@
-package com.binodnme.data;
+package com.binodnme.dateconverter.data;
 
 import java.util.Arrays;
 import java.util.HashMap;
