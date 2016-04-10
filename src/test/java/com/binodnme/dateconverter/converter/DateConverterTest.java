@@ -46,14 +46,12 @@ public class DateConverterTest {
     calendar.set(2016, Calendar.APRIL, 9);
     objects[5] = new Object[] {calendar.getTime(), new DateBS(2072, CalendarBS.CHAITRA, 27)};
 
-
     return objects;
   }
 
   @Test
   @Parameters(method = "getParams")
   public void convertADToBSTest(Date dateAD, DateBS dateBS){
-
     DateBS dateBS1 = DateConverter.convertADToBS(dateAD);
     assertEquals(dateBS, dateBS1);
   }

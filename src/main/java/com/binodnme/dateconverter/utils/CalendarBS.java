@@ -24,21 +24,17 @@ public class CalendarBS {
   public static final int CHAITRA = 11;
 
   public static int getDaysInMonth(int year, int monthIndex) {
-
     List<Integer> monthsDataInGivenYear = Data.data.get(year);
 
     if (null != monthsDataInGivenYear) {
       Integer monthData = monthsDataInGivenYear.get(monthIndex);
       if (monthData != null) {
         return monthData;
-
       } else {
         throw new IndexOutOfBoundsException("month index out of range");
-
       }
     } else {
       throw new NullPointerException("cannot find the data of year " + year);
-
     }
   }
 
@@ -68,7 +64,6 @@ public class CalendarBS {
         } else {
           currentMonth += 1;
         }
-
       }
     } while (delta > 0);
 
@@ -77,7 +72,6 @@ public class CalendarBS {
 
   public static int daysBetween(DateBS startDate, DateBS endDate) {
     int totalDays = 0;
-
     int year = startDate.getYear();
     int month = startDate.getMonth();
 
@@ -91,9 +85,7 @@ public class CalendarBS {
         month++;
       }
     }
-
     totalDays += (endDate.getDay() - startDate.getDay());
-
     return totalDays;
   }
 }

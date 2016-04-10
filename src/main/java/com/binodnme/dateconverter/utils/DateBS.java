@@ -34,7 +34,6 @@ public class DateBS {
     }
     DateBS date = (DateBS) obj;
     return this.year == date.year && this.month == date.month && this.day == date.day;
-
   }
 
   @Override
