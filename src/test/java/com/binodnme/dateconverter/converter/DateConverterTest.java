@@ -4,6 +4,8 @@ import com.binodnme.dateconverter.utils.CalendarBS;
 import com.binodnme.dateconverter.utils.DateBS;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
+import org.joda.time.DateTime;
+import org.joda.time.Days;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -20,7 +22,7 @@ import static org.junit.Assert.*;
 public class DateConverterTest {
 
   private static Object[] getParams(){
-    Object[] objects = new Object[6];
+    Object[] objects = new Object[7];
 
     Calendar calendar = Calendar.getInstance();
     calendar.set(Calendar.HOUR_OF_DAY, 0);
@@ -43,8 +45,11 @@ public class DateConverterTest {
     calendar.set(2005, Calendar.MAY, 31);
     objects[4] = new Object[] {calendar.getTime(), new DateBS(2062, CalendarBS.JESTHA, 17)};
 
-    calendar.set(2016, Calendar.APRIL, 9);
-    objects[5] = new Object[] {calendar.getTime(), new DateBS(2072, CalendarBS.CHAITRA, 27)};
+    calendar.set(2016, Calendar.APRIL, 16);
+    objects[5] = new Object[] {calendar.getTime(), new DateBS(2073, CalendarBS.BAISAKH, 4)};
+
+    calendar.set(2000, Calendar.FEBRUARY, 9);
+    objects[6] = new Object[] {calendar.getTime(), new DateBS(2056, CalendarBS.MAGH, 26)};
 
     return objects;
   }
@@ -61,5 +66,36 @@ public class DateConverterTest {
   public void convertBSToADTest(Date expectedDate, DateBS inputDateBS){
     Date actualDate = DateConverter.convertBSToAD(inputDateBS);
     assertEquals(expectedDate, actualDate);
+  }
+
+  @Test
+  public void daysBetweenTest(){
+    Calendar calendar = Calendar.getInstance();
+    calendar.set(2016, Calendar.APRIL, 10);
+    DateTime dateTime1 = new DateTime(calendar.getTime());
+
+    calendar.set(2016, Calendar.APRIL, 16);
+    DateTime dateTime = new DateTime(calendar.getTime());
+    int days = Days.daysBetween(dateTime1, dateTime).getDays();
+
+    assertEquals(6, days);
+  }
+
+  @Test
+  public void calendarTest(){
+    Calendar calendar = Calendar.getInstance();
+
+    System.out.println(calendar.getTimeInMillis());
+    try {
+      Thread.sleep(1000);
+      System.out.println(calendar.getTimeInMillis());
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    }
+
+    System.out.println(calendar.getTimeInMillis());
+    System.out.println(calendar.getTimeInMillis());
+
+
   }
 }

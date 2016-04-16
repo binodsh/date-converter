@@ -31,14 +31,16 @@ public class CalendarBSTest {
   }
 
   public static final Object[] getParameters() {
-    return new Object[] { new Object[] {
-            new DateBS(2055, 0, 1), 10, new DateBS(2055, 0, 11) },
+    return new Object[] {
+            new Object[] { new DateBS(2055, 0, 1), 10, new DateBS(2055, 0, 11) },
             new Object[] { new DateBS(2055, 0, 1), 20, new DateBS(2055, 0, 21) },
             new Object[] { new DateBS(2055, 0, 1), 30, new DateBS(2055, 0, 31) },
             new Object[] { new DateBS(2055, 0, 1), 40, new DateBS(2055, 1, 10) },
             new Object[] { new DateBS(2055, 0, 1), 70, new DateBS(2055, 2, 9) },
             new Object[] { new DateBS(2055, 0, 1), 365, new DateBS(2056, 0, 1) },
-            new Object[] { new DateBS(2055, 0, 1), 15, new DateBS(2055, 0, 16) } };
+            new Object[] { new DateBS(2055, 0, 1), 15, new DateBS(2055, 0, 16) },
+            new Object[] { new DateBS(2055, 0, 1), 3282, new DateBS(2063, CalendarBS.CHAITRA, 27) }
+    };
   }
 
   @Test

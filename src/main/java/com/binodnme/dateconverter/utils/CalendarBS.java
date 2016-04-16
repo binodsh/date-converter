@@ -56,7 +56,7 @@ public class CalendarBS {
         delta = 0;
       } else {
         currentDay = 1;
-        delta -= daysRemainingInCurrentMonth + 1;
+        delta -= (daysRemainingInCurrentMonth + 1);
 
         if (currentMonth == CHAITRA) {
           currentMonth = BAISAKH;

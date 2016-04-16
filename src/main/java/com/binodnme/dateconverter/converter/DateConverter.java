@@ -21,12 +21,13 @@ public class DateConverter {
   }
 
   private static DateBS getReferenceBS() {
-    return new DateBS(2055, 0, 1);
+    return new DateBS(2055, CalendarBS.BAISAKH, 1);
   }
 
   public static DateBS convertADToBS(Date date) {
     DateTime startDate = new DateTime(getReferenceAD());
     DateTime endDate = new DateTime(date);
+
     int daysBetween = Days.daysBetween(startDate, endDate).getDays();
 
     if (daysBetween < 0)
