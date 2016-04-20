@@ -71,11 +71,29 @@ public class CalendarBS {
   }
 
   public static int daysBetween(DateBS startDate, DateBS endDate) {
-    int totalDays = 0;
-    int year = startDate.getYear();
-    int month = startDate.getMonth();
+    DateBS tempStartDate;
+    DateBS tempEndDate;
+    int multipleFactor = 1;
 
-    while (!((year == endDate.getYear()) && (month == endDate.getMonth()))) {
+    int compareResult = startDate.compareTo(endDate);
+
+    if(compareResult < 0){
+      tempStartDate = startDate;
+      tempEndDate = endDate;
+    }else if(compareResult > 0){
+      tempStartDate = endDate;
+      tempEndDate = startDate;
+      multipleFactor = -1;
+    }else {
+      return 0;
+    }
+
+
+    int totalDays = 0;
+    int year = tempStartDate.getYear();
+    int month = tempStartDate.getMonth();
+
+    while (!((year == tempEndDate.getYear()) && (month == tempEndDate.getMonth()))) {
       if (month == CHAITRA) {
         totalDays += Data.data.get(year).get(month);
         year++;
@@ -85,7 +103,7 @@ public class CalendarBS {
         month++;
       }
     }
-    totalDays += (endDate.getDay() - startDate.getDay());
-    return totalDays;
+    totalDays += (tempEndDate.getDay() - tempStartDate.getDay());
+    return totalDays*multipleFactor;
   }
 }

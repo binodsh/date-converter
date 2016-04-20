@@ -56,4 +56,11 @@ public class CalendarBSTest {
     int days = CalendarBS.daysBetween(startDate, endDate);
     assertEquals(expectedDays, days);
   }
+
+  @Test
+  @Parameters(method = "getParameters")
+  public void daysBetweenShouldReturnNegativeDifferenceWhenEndDateIsSmallerThanStartDate(DateBS startDate, int expecedDays, DateBS endDate){
+    int days = CalendarBS.daysBetween(endDate, startDate);
+    assertEquals(-expecedDays, days);
+  }
 }

@@ -81,21 +81,4 @@ public class DateConverterTest {
     assertEquals(6, days);
   }
 
-  @Test
-  public void calendarTest(){
-    Calendar calendar = Calendar.getInstance();
-
-    System.out.println(calendar.getTimeInMillis());
-    try {
-      Thread.sleep(1000);
-      System.out.println(calendar.getTimeInMillis());
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-
-    System.out.println(calendar.getTimeInMillis());
-    System.out.println(calendar.getTimeInMillis());
-
-
-  }
 }
