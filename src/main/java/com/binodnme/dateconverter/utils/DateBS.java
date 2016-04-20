@@ -47,21 +47,22 @@ public class DateBS implements Comparable {
 
   @Override
   public int compareTo(Object o) {
-    if (!(o instanceof DateBS)) return 0;
+    if (!(o instanceof DateBS))
+      return 0;
 
-    if(this.year > ((DateBS) o).getYear()){
+    if (this.year > ((DateBS) o).getYear()) {
       return 1;
-    }else if (this.year < ((DateBS) o).getYear()){
+    } else if (this.year < ((DateBS) o).getYear()) {
       return -1;
-    }else if(this.month > ((DateBS) o).getMonth()){
+    } else if (this.month > ((DateBS) o).getMonth()) {
       return 1;
-    }else if(this.month < ((DateBS) o).getMonth()){
+    } else if (this.month < ((DateBS) o).getMonth()) {
       return -1;
-    }else if(this.day > ((DateBS) o).getDay()){
+    } else if (this.day > ((DateBS) o).getDay()) {
       return 1;
-    }else if(this.day < ((DateBS) o).getDay()){
+    } else if (this.day < ((DateBS) o).getDay()) {
       return -1;
-    }else {
+    } else {
       return 0;
     }
   }

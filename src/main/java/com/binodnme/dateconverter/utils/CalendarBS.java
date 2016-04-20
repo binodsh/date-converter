@@ -77,17 +77,16 @@ public class CalendarBS {
 
     int compareResult = startDate.compareTo(endDate);
 
-    if(compareResult < 0){
+    if (compareResult < 0) {
       tempStartDate = startDate;
       tempEndDate = endDate;
-    }else if(compareResult > 0){
+    } else if (compareResult > 0) {
       tempStartDate = endDate;
       tempEndDate = startDate;
       multipleFactor = -1;
-    }else {
+    } else {
       return 0;
     }
-
 
     int totalDays = 0;
     int year = tempStartDate.getYear();
@@ -104,6 +103,6 @@ public class CalendarBS {
       }
     }
     totalDays += (tempEndDate.getDay() - tempStartDate.getDay());
-    return totalDays*multipleFactor;
+    return totalDays * multipleFactor;
   }
 }
