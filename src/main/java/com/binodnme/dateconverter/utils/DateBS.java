@@ -21,7 +21,6 @@ public class DateBS implements Comparable {
   private int seconds = 0;
 
   public DateBS(){
-//    DateTime dateTime = new DateTime(DateTimeZone.forTimeZone(TimeZone.getTimeZone("Australia/Canberra")));
     DateTime dateTime = new DateTime(DateTimeZone.forTimeZone(TimeZone.getTimeZone("Asia/Kathmandu")));
     LocalDate localDate = dateTime.toLocalDate();
     LocalTime localTime = dateTime.toLocalTime();
