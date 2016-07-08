@@ -2,3 +2,5 @@
 DateConverter.iml
 out/
 target/
+pom.xml.asc
+src/main/resources/

@@ -5,8 +5,32 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.binodnme</groupId>
-    <artifactId>DateConverter</artifactId>
+    <artifactId>date-converter</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description>Date converter is a java library that converts the date in A.D. to B.S. and vice versa</description>
+
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
+
+
+    <developers>
+        <developer>
+            <name>Binod Shrestha</name>
+            <email>binodnme08@gmail.com</email>
+            <organizationUrl>https://github.com/binodnme</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:git://github.com/binodnme/date-converter.git</connection>
+    </scm>
 
     <build>
         <plugins>
@@ -40,5 +64,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    
+
 </project>
