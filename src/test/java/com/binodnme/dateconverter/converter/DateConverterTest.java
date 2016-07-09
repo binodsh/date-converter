@@ -22,13 +22,9 @@ import static org.junit.Assert.*;
 public class DateConverterTest {
 
   private static Object[] getParams() {
-    Object[] objects = new Object[7];
+    Object[] objects = new Object[9];
 
     Calendar calendar = Calendar.getInstance();
-    calendar.set(Calendar.HOUR_OF_DAY, 0);
-    calendar.set(Calendar.MINUTE, 0);
-    calendar.set(Calendar.SECOND, 0);
-    calendar.set(Calendar.MILLISECOND, 0);
 
     calendar.set(1998, Calendar.APRIL, 14);
     objects[0] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 1) };
@@ -42,7 +38,7 @@ public class DateConverterTest {
     calendar.set(2000, Calendar.NOVEMBER, 29);
     objects[3] = new Object[] { calendar.getTime(), new DateBS(2057, CalendarBS.MANGSHIR, 14) };
 
-    calendar.set(2005, Calendar.MAY, 31);
+    calendar.set(2005, Calendar.MAY, 30);
     objects[4] = new Object[] { calendar.getTime(), new DateBS(2062, CalendarBS.JESTHA, 17) };
 
     calendar.set(2016, Calendar.APRIL, 16);
@@ -50,6 +46,12 @@ public class DateConverterTest {
 
     calendar.set(2000, Calendar.FEBRUARY, 9);
     objects[6] = new Object[] { calendar.getTime(), new DateBS(2056, CalendarBS.MAGH, 26) };
+
+    calendar.set(1998, Calendar.APRIL, 16);
+    objects[7] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 3) };
+
+    calendar.set(1998, Calendar.APRIL, 15);
+    objects[8] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 2) };
 
     return objects;
   }
@@ -64,8 +66,15 @@ public class DateConverterTest {
   @Test
   @Parameters(method = "getParams")
   public void convertBSToADTest(Date expectedDate, DateBS inputDateBS) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(expectedDate);
+    calendar.set(Calendar.HOUR_OF_DAY, 0);
+    calendar.set(Calendar.MINUTE, 0);
+    calendar.set(Calendar.SECOND, 0);
+    calendar.set(Calendar.MILLISECOND, 0);
+
     Date actualDate = DateConverter.convertBSToAD(inputDateBS);
-    assertEquals(expectedDate, actualDate);
+    assertEquals(calendar.getTime(), actualDate);
   }
 
   @Test
