@@ -12,7 +12,7 @@ import java.util.*;
  * @Author binodnme
  * Created on 4/9/16
  */
-public class DateBS implements Comparable {
+public class DateBS implements Comparable<DateBS> {
   private int year;
   private int month;
   private int day;
@@ -20,6 +20,9 @@ public class DateBS implements Comparable {
   private int minute = 0;
   private int seconds = 0;
 
+  /**
+   * constructs {@link DateBS} with current date and time
+   */
   public DateBS(){
     DateTime dateTime = new DateTime(DateTimeZone.forTimeZone(TimeZone.getTimeZone("Asia/Kathmandu")));
     LocalDate localDate = dateTime.toLocalDate();
@@ -38,6 +41,13 @@ public class DateBS implements Comparable {
     }
   }
 
+  /** {@link DateBS} with given year, month and day
+   * index of month starts from 0 i.e index of BAISAKH is 0
+   * constructs
+   * @param year year
+   * @param month month
+   * @param day day
+     */
   public DateBS(int year, int month, int day) {
     this.year = year;
     this.month = month;
@@ -94,33 +104,30 @@ public class DateBS implements Comparable {
   }
 
   @Override
-  public int compareTo(Object o) {
-    if (!(o instanceof DateBS))
-      return 0;
-
-    if (this.year > ((DateBS) o).getYear()) {
+  public int compareTo(DateBS dateBS) {
+    if (this.year > dateBS.getYear()) {
       return 1;
-    } else if (this.year < ((DateBS) o).getYear()) {
+    } else if (this.year < dateBS.getYear()) {
       return -1;
-    } else if (this.month > ((DateBS) o).getMonth()) {
+    } else if (this.month > dateBS.getMonth()) {
       return 1;
-    } else if (this.month < ((DateBS) o).getMonth()) {
+    } else if (this.month < dateBS.getMonth()) {
       return -1;
-    } else if (this.day > ((DateBS) o).getDay()) {
+    } else if (this.day > dateBS.getDay()) {
       return 1;
-    } else if (this.day < ((DateBS) o).getDay()) {
+    } else if (this.day < dateBS.getDay()) {
       return -1;
-    } else if(this.hourOfDay > ((DateBS) o).getHourOfDay()) {
+    } else if(this.hourOfDay > dateBS.getHourOfDay()) {
       return 1;
-    } else if(this.hourOfDay < ((DateBS) o).getHourOfDay()){
+    } else if(this.hourOfDay < dateBS.getHourOfDay()){
       return -1;
-    } else if(this.minute > ((DateBS) o).getMinute()){
+    } else if(this.minute > dateBS.getMinute()){
       return 1;
-    } else if(this.minute < ((DateBS) o).getMinute()){
+    } else if(this.minute < dateBS.getMinute()){
       return -1;
-    } else if(this.seconds > ((DateBS) o).getSeconds()){
+    } else if(this.seconds > dateBS.getSeconds()){
       return 1;
-    } else if(this.seconds < ((DateBS) o).getSeconds()){
+    } else if(this.seconds < dateBS.getSeconds()){
       return -1;
     } else {
       return 0;

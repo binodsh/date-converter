@@ -14,16 +14,23 @@ import java.util.Date;
  */
 public class DateConverter {
 
+  private DateConverter(){}
+
   private static Date getReferenceAD() {
     Calendar calendar = Calendar.getInstance();
-    calendar.set(1998, Calendar.APRIL, 14, 0, 0, 0);
+    calendar.set(1943, Calendar.APRIL, 14, 0, 0, 0);
     return calendar.getTime();
   }
 
   private static DateBS getReferenceBS() {
-    return new DateBS(2055, CalendarBS.BAISAKH, 1);
+    return new DateBS(2000, CalendarBS.BAISAKH, 1);
   }
 
+  /**
+   * converts {@link Date} to corresponding {@link DateBS}
+   * @param date {@link Date}
+   * @return date in BS
+     */
   public static DateBS convertADToBS(Date date) {
     DateTime startDate = new DateTime(getReferenceAD());
     DateTime endDate = new DateTime(date);
@@ -36,6 +43,11 @@ public class DateConverter {
     return CalendarBS.addXDays(getReferenceBS(), daysBetween);
   }
 
+  /**
+   * converts {@link DateBS} to corresponding {@link Date}
+   * @param date {@link DateBS}
+   * @return date in AD
+     */
   public static Date convertBSToAD(DateBS date) {
     DateBS startDate = getReferenceBS();
     int days = CalendarBS.daysBetween(startDate, date);

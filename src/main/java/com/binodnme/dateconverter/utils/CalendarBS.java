@@ -1,7 +1,9 @@
 package com.binodnme.dateconverter.utils;
 
 import com.binodnme.dateconverter.data.Data;
+import org.junit.Test;
 
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -9,7 +11,6 @@ import java.util.List;
  * Created on 4/9/16
  */
 public class CalendarBS {
-
   public static final int BAISAKH = 0;
   public static final int JESTHA = 1;
   public static final int ASAR = 2;
@@ -23,6 +24,15 @@ public class CalendarBS {
   public static final int FALGUN = 10;
   public static final int CHAITRA = 11;
 
+  private CalendarBS(){}
+
+  /**
+   * get number of days in given year and month
+   * index of month starts from 0 i.e index of BAISAKH is 0 and so on
+   * @param year year
+   * @param monthIndex index of month
+   * @return number of days in given year and month
+     */
   public static int getDaysInMonth(int year, int monthIndex) {
     List<Integer> monthsDataInGivenYear = Data.data.get(year);
 
@@ -38,6 +48,12 @@ public class CalendarBS {
     }
   }
 
+  /**
+   * adds days in given {@link DateBS}
+   * @param dateBS input {@link DateBS}
+   * @param days total days to add
+   * @return final {@link DateBS} after adding given days in input {@link DateBS}
+     */
   public static DateBS addXDays(DateBS dateBS, int days) {
     if (dateBS == null || days < 0)
       return null;
@@ -70,6 +86,12 @@ public class CalendarBS {
     return new DateBS(currentYear, currentMonth, currentDay);
   }
 
+  /**
+   * return the days between input dates
+   * @param startDate start date
+   * @param endDate end date
+   * @return days between start and end date
+     */
   public static int daysBetween(DateBS startDate, DateBS endDate) {
     DateBS tempStartDate;
     DateBS tempEndDate;
