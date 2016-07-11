@@ -1,9 +1,6 @@
 package com.binodnme.dateconverter.utils;
 
 import com.binodnme.dateconverter.data.Data;
-import org.junit.Test;
-
-import java.util.Calendar;
 import java.util.List;
 
 /**
