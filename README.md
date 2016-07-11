@@ -20,4 +20,4 @@ DateBS newDateBS = CalendarBS.addXDays(dateBS, daysToAdd)
 ```
 
 #Download
-[``DateConverter.jar``](https://github.com/binodnme/date-converter/releases/download/v0.1/dateconverter.jar)
+[``dateconverter.jar``](https://github.com/binodnme/date-converter/releases/download/v0.1/dateconverter.jar)
