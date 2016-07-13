@@ -1,6 +1,6 @@
-package com.binodnme.dateconverter.utils;
+package com.github.binodnme.dateconverter.utils;
 
-import com.binodnme.dateconverter.converter.DateConverter;
+import com.github.binodnme.dateconverter.converter.DateConverter;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.LocalDate;
@@ -9,7 +9,7 @@ import org.joda.time.LocalTime;
 import java.util.*;
 
 /**
- * @Author binodnme
+ * Created by binodnme
  * Created on 4/9/16
  */
 public class DateBS implements Comparable<DateBS> {

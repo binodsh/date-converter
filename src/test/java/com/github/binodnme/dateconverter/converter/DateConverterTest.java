@@ -1,7 +1,7 @@
-package com.binodnme.dateconverter.converter;
+package com.github.binodnme.dateconverter.converter;
 
-import com.binodnme.dateconverter.utils.CalendarBS;
-import com.binodnme.dateconverter.utils.DateBS;
+import com.github.binodnme.dateconverter.utils.CalendarBS;
+import com.github.binodnme.dateconverter.utils.DateBS;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.joda.time.DateTime;

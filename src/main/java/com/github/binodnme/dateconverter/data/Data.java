@@ -1,4 +1,4 @@
-package com.binodnme.dateconverter.data;
+package com.github.binodnme.dateconverter.data;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Author binodnme
+ * Created by binodnme
  * Created on 4/9/16
  */
 public class Data {

@@ -1,4 +1,4 @@
-package com.binodnme.dateconverter.utils;
+package com.github.binodnme.dateconverter.utils;
 
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;

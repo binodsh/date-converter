@@ -1,12 +1,13 @@
-package com.binodnme.main;
+package com.github.binodnme.main;
 
-import com.binodnme.dateconverter.converter.DateConverter;
-import com.binodnme.dateconverter.utils.DateBS;
+import com.github.binodnme.dateconverter.converter.DateConverter;
+import com.github.binodnme.dateconverter.utils.DateBS;
 
 import java.util.Date;
 
 /**
- * @Author kaala on 7/11/16.
+ * Created by binodnme
+ * Created on 7/11/16.
  */
 public class Main {
     /**

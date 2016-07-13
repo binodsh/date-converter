@@ -1,7 +1,7 @@
-package com.binodnme.dateconverter.converter;
+package com.github.binodnme.dateconverter.converter;
 
-import com.binodnme.dateconverter.utils.CalendarBS;
-import com.binodnme.dateconverter.utils.DateBS;
+import com.github.binodnme.dateconverter.utils.CalendarBS;
+import com.github.binodnme.dateconverter.utils.DateBS;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
@@ -9,7 +9,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * @Author binodnme
+ * Created by binodnme
  * Created on 4/9/16
  */
 public class DateConverter {

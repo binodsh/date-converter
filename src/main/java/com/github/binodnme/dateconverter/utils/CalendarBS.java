@@ -1,10 +1,10 @@
-package com.binodnme.dateconverter.utils;
+package com.github.binodnme.dateconverter.utils;
 
-import com.binodnme.dateconverter.data.Data;
+import com.github.binodnme.dateconverter.data.Data;
 import java.util.List;
 
 /**
- * @Author binodnme
+ * Created by binodnme
  * Created on 4/9/16
  */
 public class CalendarBS {
