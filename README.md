@@ -19,5 +19,15 @@ Date date = DateConverter.convertBSToAD(dateBS);    //returns corresponding Date
 DateBS newDateBS = CalendarBS.addXDays(dateBS, daysToAdd)
 ```
 
-#Download
-[``dateconverter.jar``](https://github.com/binodnme/date-converter/releases/download/v0.1/dateconverter.jar)
+#Download and Install
+Download the following jar and put it on your classpath
+[``dateconverter.jar``](https://github.com/binodnme/date-converter/releases/download/v1.0/dateconverter.jar)
+
+Or add a dependency
+```xml
+<dependency>
+  <groupId>com.github.binodnme</groupId>
+  <artifactId>date-converter</artifactId>
+  <version>1.0</version>
+</dependency>
+```
