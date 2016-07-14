@@ -21,13 +21,19 @@ DateBS newDateBS = CalendarBS.addXDays(dateBS, daysToAdd)
 
 #Download and Install
 Download the following jar and put it on your classpath
-[``dateconverter.jar``](https://github.com/binodnme/date-converter/releases/download/v1.0/dateconverter.jar)
+[``dateconverter.jar``](https://github.com/binodnme/date-converter/releases/download/v1.0.1/dateconverter.jar)
 
-Or add a dependency
+Or add a dependency:
+###Maven
 ```xml
 <dependency>
   <groupId>com.github.binodnme</groupId>
   <artifactId>date-converter</artifactId>
-  <version>1.0</version>
+  <version>1.0.1</version>
 </dependency>
 ```
+###Gradle
+```compile 'com.github.binodnme:date-converter:1.0.1'```
+
+or find your dependency here
+[``maven central``](https://search.maven.org/#artifactdetails%7Ccom.github.binodnme%7Cdate-converter%7C1.0.1%7Cjar)
