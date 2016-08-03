@@ -57,11 +57,11 @@ public class CalendarBS {
 
     int delta = days;
     int currentYear = dateBS.getYear();
-    int currentMonth = dateBS.getMonth();
+    Month currentMonth = dateBS.getMonth();
     int currentDay = dateBS.getDay();
 
     do {
-      int totalDaysInCurrentMonth = Data.data.get(currentYear).get(currentMonth);
+      int totalDaysInCurrentMonth = Data.data.get(currentYear).get(currentMonth.getValue());
       int daysRemainingInCurrentMonth = totalDaysInCurrentMonth - currentDay;
 
       if (delta <= daysRemainingInCurrentMonth) {
@@ -71,11 +71,11 @@ public class CalendarBS {
         currentDay = 1;
         delta -= (daysRemainingInCurrentMonth + 1);
 
-        if (currentMonth == CHAITRA) {
-          currentMonth = BAISAKH;
+        if (currentMonth == Month.CHAITRA) {
+          currentMonth = Month.BAISAKH;
           currentYear += 1;
         } else {
-          currentMonth += 1;
+          currentMonth = currentMonth.next();
         }
       }
     } while (delta > 0);
@@ -109,16 +109,16 @@ public class CalendarBS {
 
     int totalDays = 0;
     int year = tempStartDate.getYear();
-    int month = tempStartDate.getMonth();
+    Month month = tempStartDate.getMonth();
 
     while (!((year == tempEndDate.getYear()) && (month == tempEndDate.getMonth()))) {
-      if (month == CHAITRA) {
-        totalDays += Data.data.get(year).get(month);
+      if (month == Month.CHAITRA) {
+        totalDays += Data.data.get(year).get(month.getValue());
         year++;
-        month = BAISAKH;
+        month = Month.BAISAKH;
       } else {
-        totalDays += Data.data.get(year).get(month);
-        month++;
+        totalDays += Data.data.get(year).get(month.getValue());
+        month = month.next();
       }
     }
     totalDays += (tempEndDate.getDay() - tempStartDate.getDay());

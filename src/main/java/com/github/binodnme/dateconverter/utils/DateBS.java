@@ -14,7 +14,7 @@ import java.util.*;
  */
 public class DateBS implements Comparable<DateBS> {
   private int year;
-  private int month;
+  private Month month;
   private int day;
   private int hourOfDay = 0;
   private int minute = 0;
@@ -48,7 +48,7 @@ public class DateBS implements Comparable<DateBS> {
    * @param month month
    * @param day day
      */
-  public DateBS(int year, int month, int day) {
+  public DateBS(int year, Month month, int day) {
     this.year = year;
     this.month = month;
     this.day = day;
@@ -58,7 +58,7 @@ public class DateBS implements Comparable<DateBS> {
     return year;
   }
 
-  public int getMonth() {
+  public Month getMonth() {
     return month;
   }
 
@@ -109,9 +109,9 @@ public class DateBS implements Comparable<DateBS> {
       return 1;
     } else if (this.year < dateBS.getYear()) {
       return -1;
-    } else if (this.month > dateBS.getMonth()) {
+    } else if (this.month.getValue() > dateBS.getMonth().getValue()) {
       return 1;
-    } else if (this.month < dateBS.getMonth()) {
+    } else if (this.month.getValue() < dateBS.getMonth().getValue()) {
       return -1;
     } else if (this.day > dateBS.getDay()) {
       return 1;

@@ -2,6 +2,7 @@ package com.github.binodnme.dateconverter.converter;
 
 import com.github.binodnme.dateconverter.utils.CalendarBS;
 import com.github.binodnme.dateconverter.utils.DateBS;
+import com.github.binodnme.dateconverter.utils.Month;
 import org.joda.time.DateTime;
 import org.joda.time.Days;
 
@@ -23,7 +24,7 @@ public class DateConverter {
   }
 
   private static DateBS getReferenceBS() {
-    return new DateBS(2000, CalendarBS.BAISAKH, 1);
+    return new DateBS(2000, Month.BAISAKH, 1);
   }
 
   /**

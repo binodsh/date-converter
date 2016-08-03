@@ -2,6 +2,7 @@ package com.github.binodnme.dateconverter.converter;
 
 import com.github.binodnme.dateconverter.utils.CalendarBS;
 import com.github.binodnme.dateconverter.utils.DateBS;
+import com.github.binodnme.dateconverter.utils.Month;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.joda.time.DateTime;
@@ -27,49 +28,49 @@ public class DateConverterTest {
     Calendar calendar = Calendar.getInstance();
 
     calendar.set(1998, Calendar.APRIL, 14);
-    objects[0] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 1) };
+    objects[0] = new Object[] { calendar.getTime(), new DateBS(2055, Month.BAISAKH, 1) };
 
     calendar.set(2007, Calendar.APRIL, 10);
-    objects[1] = new Object[] { calendar.getTime(), new DateBS(2063, CalendarBS.CHAITRA, 27) };
+    objects[1] = new Object[] { calendar.getTime(), new DateBS(2063, Month.CHAITRA, 27) };
 
     calendar.set(2003, Calendar.JUNE, 13);
-    objects[2] = new Object[] { calendar.getTime(), new DateBS(2060, CalendarBS.JESTHA, 30) };
+    objects[2] = new Object[] { calendar.getTime(), new DateBS(2060, Month.JESTHA, 30) };
 
     calendar.set(2000, Calendar.NOVEMBER, 29);
-    objects[3] = new Object[] { calendar.getTime(), new DateBS(2057, CalendarBS.MANGSHIR, 14) };
+    objects[3] = new Object[] { calendar.getTime(), new DateBS(2057, Month.MANGSHIR, 14) };
 
     calendar.set(2005, Calendar.MAY, 30);
-    objects[4] = new Object[] { calendar.getTime(), new DateBS(2062, CalendarBS.JESTHA, 17) };
+    objects[4] = new Object[] { calendar.getTime(), new DateBS(2062, Month.JESTHA, 17) };
 
     calendar.set(2016, Calendar.APRIL, 16);
-    objects[5] = new Object[] { calendar.getTime(), new DateBS(2073, CalendarBS.BAISAKH, 4) };
+    objects[5] = new Object[] { calendar.getTime(), new DateBS(2073, Month.BAISAKH, 4) };
 
     calendar.set(2000, Calendar.FEBRUARY, 9);
-    objects[6] = new Object[] { calendar.getTime(), new DateBS(2056, CalendarBS.MAGH, 26) };
+    objects[6] = new Object[] { calendar.getTime(), new DateBS(2056, Month.MAGH, 26) };
 
     calendar.set(1998, Calendar.APRIL, 16);
-    objects[7] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 3) };
+    objects[7] = new Object[] { calendar.getTime(), new DateBS(2055, Month.BAISAKH, 3) };
 
     calendar.set(1998, Calendar.APRIL, 15);
-    objects[8] = new Object[] { calendar.getTime(), new DateBS(2055, CalendarBS.BAISAKH, 2) };
+    objects[8] = new Object[] { calendar.getTime(), new DateBS(2055, Month.BAISAKH, 2) };
 
     calendar.set(1968, Calendar.JULY, 26);
-    objects[9] = new Object[] { calendar.getTime(), new DateBS(2025, CalendarBS.SHRAWAN, 11) };
+    objects[9] = new Object[] { calendar.getTime(), new DateBS(2025, Month.SHRAWAN, 11) };
 
     calendar.set(1953, Calendar.APRIL, 23);
-    objects[10] = new Object[] { calendar.getTime(), new DateBS(2010, CalendarBS.BAISAKH, 11) };
+    objects[10] = new Object[] { calendar.getTime(), new DateBS(2010, Month.BAISAKH, 11) };
 
     calendar.set(2001, Calendar.DECEMBER, 18);
-    objects[11] = new Object[] { calendar.getTime(), new DateBS(2058, CalendarBS.POUSH, 3) };
+    objects[11] = new Object[] { calendar.getTime(), new DateBS(2058, Month.POUSH, 3) };
 
     calendar.set(2023, Calendar.NOVEMBER, 15);
-    objects[12] = new Object[] { calendar.getTime(), new DateBS(2080, CalendarBS.KARTIK, 29) };
+    objects[12] = new Object[] { calendar.getTime(), new DateBS(2080, Month.KARTIK, 29) };
 
     calendar.set(2034, Calendar.APRIL, 11);
-    objects[13] = new Object[] { calendar.getTime(), new DateBS(2090, CalendarBS.CHAITRA, 28) };
+    objects[13] = new Object[] { calendar.getTime(), new DateBS(2090, Month.CHAITRA, 28) };
 
     calendar.set(2041, Calendar.SEPTEMBER, 14);
-    objects[14] = new Object[] { calendar.getTime(), new DateBS(2098, CalendarBS.BHADRA, 29) };
+    objects[14] = new Object[] { calendar.getTime(), new DateBS(2098, Month.BHADRA, 29) };
 
     return objects;
   }

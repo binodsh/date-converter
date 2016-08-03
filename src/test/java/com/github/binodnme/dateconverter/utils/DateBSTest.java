@@ -15,11 +15,11 @@ import static org.junit.Assert.assertEquals;
 public class DateBSTest {
 
   public static final Object[] getParameters() {
-    return new Object[] { new Object[] { new DateBS(2073, CalendarBS.BAISAKH, 5), new DateBS(2073, CalendarBS.BAISAKH, 1), 1 },
-            new Object[] { new DateBS(2073, CalendarBS.BAISAKH, 5), new DateBS(2073, CalendarBS.JESTHA, 1), -1 },
-            new Object[] { new DateBS(2073, CalendarBS.BAISAKH, 5), new DateBS(2073, CalendarBS.BAISAKH, 5), 0 },
-            new Object[] { new DateBS(2072, CalendarBS.BAISAKH, 5), new DateBS(2071, CalendarBS.JESTHA, 23), 1 },
-            new Object[] { new DateBS(2073, CalendarBS.BAISAKH, 5), new DateBS(2074, CalendarBS.ASAR, 1), -1 } };
+    return new Object[] { new Object[] { new DateBS(2073, Month.BAISAKH, 5), new DateBS(2073, Month.BAISAKH, 1), 1 },
+            new Object[] { new DateBS(2073, Month.BAISAKH, 5), new DateBS(2073, Month.JESTHA, 1), -1 },
+            new Object[] { new DateBS(2073, Month.BAISAKH, 5), new DateBS(2073, Month.BAISAKH, 5), 0 },
+            new Object[] { new DateBS(2072, Month.BAISAKH, 5), new DateBS(2071, Month.JESTHA, 23), 1 },
+            new Object[] { new DateBS(2073, Month.BAISAKH, 5), new DateBS(2074, Month.ASAR, 1), -1 } };
   }
 
   @Test
@@ -31,7 +31,7 @@ public class DateBSTest {
 //  @Test
 //  public void emptyConstructorShouldReturnTodayDate(){
 //    DateBS dateBS = new DateBS();
-//    DateBS dateBS1 = new DateBS(2073, CalendarBS.ASAR, 25);
+//    DateBS dateBS1 = new DateBS(2073, Month.ASAR, 25);
 //    assertEquals(dateBS1, dateBS);
 //  }
 }
