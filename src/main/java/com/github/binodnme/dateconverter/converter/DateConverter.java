@@ -2,9 +2,10 @@ package com.github.binodnme.dateconverter.converter;
 
 import com.github.binodnme.dateconverter.utils.CalendarBS;
 import com.github.binodnme.dateconverter.utils.DateBS;
-import org.joda.time.DateTime;
-import org.joda.time.Days;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.temporal.ChronoUnit;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -32,10 +33,10 @@ public class DateConverter {
    * @return date in BS
      */
   public static DateBS convertADToBS(Date date) {
-    DateTime startDate = new DateTime(getReferenceAD());
-    DateTime endDate = new DateTime(date);
+    LocalDate startDate = getReferenceAD().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+    LocalDate endDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-    int daysBetween = Days.daysBetween(startDate, endDate).getDays();
+    long daysBetween = startDate.until(endDate, ChronoUnit.DAYS);
 
     if (daysBetween < 0)
       return null;

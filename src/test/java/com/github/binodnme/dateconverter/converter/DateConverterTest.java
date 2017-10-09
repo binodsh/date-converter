@@ -4,15 +4,15 @@ import com.github.binodnme.dateconverter.utils.CalendarBS;
 import com.github.binodnme.dateconverter.utils.DateBS;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
-import org.joda.time.DateTime;
-import org.joda.time.Days;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Calendar;
 import java.util.Date;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 /**
  * @Author binodnme
@@ -99,11 +99,12 @@ public class DateConverterTest {
   public void daysBetweenTest() {
     Calendar calendar = Calendar.getInstance();
     calendar.set(2016, Calendar.APRIL, 10);
-    DateTime dateTime1 = new DateTime(calendar.getTime());
+    LocalDate date1 = calendar.getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
     calendar.set(2016, Calendar.APRIL, 16);
-    DateTime dateTime = new DateTime(calendar.getTime());
-    int days = Days.daysBetween(dateTime1, dateTime).getDays();
+    LocalDate date2 = calendar.getTime().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+
+    int days = date1.until(date2).getDays();
 
     assertEquals(6, days);
   }

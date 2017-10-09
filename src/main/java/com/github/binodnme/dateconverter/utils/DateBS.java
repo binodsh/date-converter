@@ -1,12 +1,10 @@
 package com.github.binodnme.dateconverter.utils;
 
 import com.github.binodnme.dateconverter.converter.DateConverter;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.LocalDate;
-import org.joda.time.LocalTime;
 
-import java.util.*;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.util.Calendar;
 
 /**
  * Created by binodnme
@@ -24,20 +22,19 @@ public class DateBS implements Comparable<DateBS> {
    * constructs {@link DateBS} with current date and time
    */
   public DateBS(){
-    DateTime dateTime = new DateTime(DateTimeZone.forTimeZone(TimeZone.getTimeZone("Asia/Kathmandu")));
-    LocalDate localDate = dateTime.toLocalDate();
-    LocalTime localTime = dateTime.toLocalTime();
+    LocalDateTime localDateTime = LocalDateTime.now(ZoneId.systemDefault());
+
     Calendar calendar = Calendar.getInstance();
-    calendar.set(localDate.getYear(), localDate.getMonthOfYear() - 1, localDate.getDayOfMonth());
+    calendar.set(localDateTime.getYear(), localDateTime.getMonthValue() - 1, localDateTime.getDayOfMonth());
     DateBS dateBS = DateConverter.convertADToBS(calendar.getTime());
 
     if(dateBS != null){
       this.year = dateBS.getYear();
       this.month = dateBS.getMonth();
       this.day = dateBS.getDay();
-      this.hourOfDay = localTime.getHourOfDay();
-      this.minute = localTime.getMinuteOfHour();
-      this.seconds = localTime.getSecondOfMinute();
+      this.hourOfDay = localDateTime.getHour();
+      this.minute = localDateTime.getMinute();
+      this.seconds = localDateTime.getSecond();
     }
   }
 

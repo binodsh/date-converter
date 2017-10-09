@@ -1,6 +1,7 @@
 package com.github.binodnme.dateconverter.utils;
 
 import com.github.binodnme.dateconverter.data.Data;
+
 import java.util.List;
 
 /**
@@ -51,18 +52,18 @@ public class CalendarBS {
    * @param days total days to add
    * @return final {@link DateBS} after adding given days in input {@link DateBS}
      */
-  public static DateBS addXDays(DateBS dateBS, int days) {
+  public static DateBS addXDays(DateBS dateBS, long days) {
     if (dateBS == null || days < 0)
       return null;
 
-    int delta = days;
+    long delta = days;
     int currentYear = dateBS.getYear();
     int currentMonth = dateBS.getMonth();
     int currentDay = dateBS.getDay();
 
     do {
       int totalDaysInCurrentMonth = Data.data.get(currentYear).get(currentMonth);
-      int daysRemainingInCurrentMonth = totalDaysInCurrentMonth - currentDay;
+      long daysRemainingInCurrentMonth = totalDaysInCurrentMonth - currentDay;
 
       if (delta <= daysRemainingInCurrentMonth) {
         currentDay += delta;
