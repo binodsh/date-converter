@@ -12,7 +12,7 @@ import java.util.Map;
 public class Data {
     private Data(){}
 
-    public static Map<Integer, List<Integer>> data = new HashMap<Integer, List<Integer>>() {
+    public static final Map<Integer, List<Integer>> data = new HashMap<>() {
         {
             put(2000, Arrays.asList(30, 32, 31, 32, 31, 30, 30, 30, 29, 30, 29, 31));
             put(2001, Arrays.asList(31, 31, 32, 31, 31, 31, 30, 29, 30, 29, 30, 30));
@@ -117,4 +117,5 @@ public class Data {
             put(2100, Arrays.asList(31, 32, 31, 32, 30, 31, 30, 29, 30, 29, 30, 30));
         }
     };
+
 }
