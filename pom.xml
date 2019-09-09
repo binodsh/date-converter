@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.binodnme</groupId>
+    <groupId>com.github.binodsh</groupId>
     <artifactId>date-converter</artifactId>
     <version>2.0.0</version>
     <packaging>jar</packaging>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Date converter is a java library that converts the date in A.D. to B.S. and vice versa</description>
-    <url>https://github.com/binodnme/date-converter</url>
+    <url>https://github.com/binodsh/date-converter</url>
 
     <licenses>
         <license>
@@ -25,14 +25,14 @@
         <developer>
             <name>Binod Shrestha</name>
             <email>binodnme08@gmail.com</email>
-            <organizationUrl>https://github.com/binodnme</organizationUrl>
+            <organizationUrl>https://github.com/binodsh</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git://github.com/binodnme/date-converter.git</connection>
-        <developerConnection>scm:git:git://github.com/binodnme/date-converter.git</developerConnection>
-        <url>https://github.com/binodnme/date-converter/tree/master</url>
+        <connection>scm:git:git://github.com/binodsh/date-converter.git</connection>
+        <developerConnection>scm:git:git://github.com/binodsh/date-converter.git</developerConnection>
+        <url>https://github.com/binodsh/date-converter/tree/master</url>
     </scm>
 
 

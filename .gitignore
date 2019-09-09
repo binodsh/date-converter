@@ -5,3 +5,9 @@ target/
 pom.xml.asc
 src/main/resources/
 date-converter.iml
+.classpath
+.project
+.settings/org.eclipse.jdt.apt.core.prefs
+.settings/org.eclipse.jdt.core.prefs
+.settings/org.eclipse.m2e.core.prefs
+.vscode/settings.json
