@@ -17,7 +17,7 @@ public class CalendarBSTest {
     @Test
     public void getDaysInMonthTest() {
         int days = CalendarBS.getDaysInMonth(2055, 11);
-        assertEquals(30, days);
+        assertEquals(10, days);
     }
 
     @Test(expected = NullPointerException.class)
